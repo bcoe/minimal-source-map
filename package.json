@@ -1,0 +1,29 @@
+{
+  "name": "minimal-source-map",
+  "version": "1.0.0",
+  "description": "minimal implementation of source map revision 3 proposal",
+  "main": "index.js",
+  "scripts": {
+    "test": "c8 mocha test.js",
+    "posttest": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcoe/minimal-source-map.git"
+  },
+  "keywords": [
+    "source-map",
+    "v3"
+  ],
+  "author": "Ben Coe <ben@npmjs.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcoe/minimal-source-map/issues"
+  },
+  "homepage": "https://github.com/bcoe/minimal-source-map#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.1",
+    "standard": "^12.0.1"
+  }
+}
