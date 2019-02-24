@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/bcoe/minimal-source-map#readme",
   "devDependencies": {
+    "c8": "^3.4.0",
     "chai": "^4.2.0",
     "mocha": "^6.0.1",
     "standard": "^12.0.1"
