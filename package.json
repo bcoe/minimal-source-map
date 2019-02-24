@@ -4,9 +4,10 @@
   "description": "minimal implementation of source map revision 3 proposal",
   "main": "index.js",
   "scripts": {
-    "test": "c8 mocha test.js",
+    "test": "c8 mocha test/test.js",
     "posttest": "standard",
-    "release": "standard-version"
+    "release": "standard-version",
+    "lint:fix": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,10 @@
     "mocha": "^6.0.1",
     "standard": "^12.0.1",
     "standard-version": "^5.0.0"
+  },
+  "standard": {
+    "ignore": [
+      "**/test/fixtures"
+    ]
   }
 }
