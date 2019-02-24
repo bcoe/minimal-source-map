@@ -4,7 +4,7 @@
   "description": "minimal implementation of source map revision 3 proposal",
   "main": "index.js",
   "scripts": {
-    "test": "c8 mocha test/test.js",
+    "test": "c8 mocha test/*.js",
     "posttest": "standard",
     "release": "standard-version",
     "lint:fix": "standard --fix"

@@ -10,10 +10,20 @@ Minimal implementation of source-map specification described in:
 
 ## API
 
-* *parseBase64VLQSegment(string)*: given a Base 64 VLQ segment, e.g,, 
-    `ABCD` from mappings, return 1,4 or 5 variable length array of integers.
-  * TODO: throw exceptions if wrong number of elements is returned.
-  * [See: Proposed Format](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit#heading=h.qz3o9nc69um5).
-* *extractSourceMapComment(string)*: given a string representing JavaScript
-  source, extract a comment of the format `//# sourceMappingURL=`.
-  * [See: Linking Generated Code](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit#heading=h.lmz475t4mvbx).
+The main module entry point exposes the following API:
+
+* `getSourceMapFromSource([string] source)`: given a string containing source-code,
+  parse source map comment. returns `SourceMap` instance.
+* `getSourceMapFromComment([string] comment)`: given a source-map comment, return a 
+  `SourceMap` instance.
+* `getSourceMapFromObject([object] rawSourceMap)`: given a raw source-map object, return a
+  `SourceMap` instance.
+
+### SourceMap class
+
+When a source map is parsed, a `SourceMap` instance is returned with the
+following methods:
+
+* `getOriginalPositionFor ([integer] line, integer column)`: given a line and
+  column number in transpiled code, return line and column position in original
+  source if applicable (_there are cases where there may be no mapping back_).
